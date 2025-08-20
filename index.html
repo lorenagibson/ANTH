@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthropology Open Day 2025</title>
+
+    <style>
+        .inter-regular {
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        .inter-medium {
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        .inter-semibold {
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        .inter-bold {
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafafa;
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .app-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border: 2px solid #0D4C38;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .main-question {
+            background-color: #0D4C38;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .main-question h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .pathways {
+            padding: 30px;
+        }
+
+        .pathway-button {
+            display: block;
+            width: 100%;
+            background-color: rgba(204, 220, 215, 0.4);
+            color: #0D4C38;
+            border: none;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .pathway-button:hover {
+            background-color: white;
+            border: 2px solid #CCDCD7;
+        }
+
+        .scenario {
+            background-color: white;
+            color: black;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .scenario h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #0D4C38;
+        }
+
+        .scenario p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .choice-button {
+            background-color: rgba(204, 220, 215, 0.4);
+            color: black;
+            border: none;
+            padding: 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .choice-button:hover {
+            background-color: white;
+            border: 2px solid #CCDCD7;
+        }
+
+        .outcome {
+            background-color: white;
+            padding: 30px;
+        }
+
+        .outcome h2 {
+            color: #0D4C38;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .outcome-description {
+            color: black;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .career-section {
+            background-color: #CCDCD7;
+            color: #0D4C38;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .career-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .career-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .career-section li {
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .courses-section {
+            background-color: #0D4C38;
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .courses-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .courses-section ul {
+            list-style: none;
+        }
+
+        .courses-section li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .courses-section li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+
+        .back-button {
+            background-color: #0D4C38;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0a3d2b;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .app-container {
+                margin: 10px;
+                border-radius: 6px;
+            }
+            
+            .main-question, .pathways, .scenario, .outcome {
+                padding: 20px;
+            }
+            
+            .pathway-button, .choice-button {
+                padding: 15px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Question Screen -->
+        <div id="main-screen">
+            <div class="main-question">
+                <h1>What fascinates you most about people?</h1>
+            </div>
+            <div class="pathways">
+                <button class="pathway-button" onclick="showScenario('pathA')">
+                    I'm interested in cultural diversity and curious about how people create meaning and identities in different places around the world
+                </button>
+                <button class="pathway-button" onclick="showScenario('pathB')">
+                    I'm interested in how technologies shape culture and society
+                </button>
+                <button class="pathway-button" onclick="showScenario('pathC')">
+                    I want to understand how cultures relate to sustainability and environmental challenges
+                </button>
+                <button class="pathway-button" onclick="showScenario('pathD')">
+                    I want to support human rights and work on social justice issues
+                </button>
+                <button class="pathway-button" onclick="showScenario('pathE')">
+                    I'm interested in the connections between culture, food, and wellbeing
+                </button>
+            </div>
+        </div>
+
+        <!-- Path A Scenario -->
+        <div id="pathA" class="hidden">
+            <div class="scenario">
+                <h2>Cultural Anthropology Pathway</h2>
+                <p>You're studying a multicultural neighbourhood where traditional Indigenous landowners live alongside recent immigrants and people who have been living there for generations but are originally from elsewhere.</p>
+                <p>Each community has different ways of using the same public spaces and of expressing their cultural identities through storytelling, rituals, festivals, clothing, murals, and graffiti art. <strong>How do you want to understand these differences?</strong></p>
+                <div class="choices">
+                    <button class="choice-button" onclick="showOutcome('outcomeA1')">
+                        Focus on the rituals, beliefs, and daily interactions between communities
+                    </button>
+                    <button class="choice-button" onclick="showOutcome('outcomeA2')">
+                        Focus on how people use visual media, art, clothing, and social media to express their identities
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Path B Scenario -->
+        <div id="pathB" class="hidden">
+            <div class="scenario">
+                <h2>Science, Technology and Innovation Pathway</h2>
+                <p>A major tech company is developing AI-powered forest monitoring systems for South Korea's forests, which were destroyed during World War 2 and are being regenerated.</p>
+                <p>Different groups have different reactions to this new technology: forest scientists are excited about the detailed data it could provide, while local communities worry about how it might change their relationship with the forests. <strong>How do you want to approach understanding this?</strong></p>
+                <div class="choices">
+                    <button class="choice-button" onclick="showOutcome('outcomeB1')">
+                        Focus on how scientists at the tech company develop and use new technologies to understand and manage forests
+                    </button>
+                    <button class="choice-button" onclick="showOutcome('outcomeB2')">
+                        Focus on how local communities use their knowledge of the forests to develop cultural indicators for forest health
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Path C Scenario -->
+        <div id="pathC" class="hidden">
+            <div class="scenario">
+                <h2>Environment and Global Sustainability Pathway</h2>
+                <p>Cities across Asia are dealing with severe air pollution. In Bangkok, different communities cope in various ways, from wearing masks and growing food indoors to changing when and where they go outside.</p>
+                <p>Air pollution is also changing how people relate to their city, their government, and each other. Some groups are organising for cleaner air, while others focus on individual strategies.</p>
+                <p>The government is studying how Fiji and the Solomon Islands manage air quality, wanting to draw on Pacific countries' expertise in environmental resilience. <strong>How do you want to approach understanding this?</strong></p>
+                <div class="choices">
+                    <button class="choice-button" onclick="showOutcome('outcomeC1')">
+                        Focus on how different communities in Bangkok develop strategies for dealing with air pollution
+                    </button>
+                    <button class="choice-button" onclick="showOutcome('outcomeC2')">
+                        Focus on how Pacific Island countries approach urban environmental challenges and what other regions can learn from them
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Path D Scenario -->
+        <div id="pathD" class="hidden">
+            <div class="scenario">
+                <h2>Human Rights and Social Justice Pathway</h2>
+                <p>An international NGO is running educational development programmes for women in urban slums across India. However, the programme is facing unexpected challenges in slum areas with high numbers of migrant families.</p>
+                <p>In some communities, families don't want women participating, citing cultural and religious concerns. Other women don't like the programmes on offer and are organising their own.</p>
+                <p>The NGO coordinators – who often come from different cultural or religious backgrounds – want to understand why their programmes aren't working as planned. <strong>How do you want to approach this?</strong></p>
+                <div class="choices">
+                    <button class="choice-button" onclick="showOutcome('outcomeD1')">
+                        Focus on the NGO's education programme to understand how it works and what the unintended cultural impacts might be
+                    </button>
+                    <button class="choice-button" onclick="showOutcome('outcomeD2')">
+                        Work with a local group that is running its own informal school for girls and women
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Path E Scenario -->
+        <div id="pathE" class="hidden">
+            <div class="scenario">
+                <h2>Health and Wellbeing Pathway</h2>
+                <p>A large hospital in Auckland is seeing increasing numbers of patients from diverse cultural backgrounds who aren't responding well to standard treatments.</p>
+                <p>Doctors are puzzled when patients don't follow medical advice or bring family members to make decisions. Some families insist on preparing traditional foods for hospitalised relatives, while other patients are experiencing what medical staff describe as "unexplained" symptoms that seem connected to family conflicts or spiritual concerns.</p>
+                <p>Doctors want to improve patient outcomes but don't understand why their medical protocols aren't working effectively. <strong>How do you want to approach this?</strong></p>
+                <div class="choices">
+                    <button class="choice-button" onclick="showOutcome('outcomeE1')">
+                        Focus on how family relationships and kinship influence health decisions and healing practices
+                    </button>
+                    <button class="choice-button" onclick="showOutcome('outcomeE2')">
+                        Focus on the role of food and eating in maintaining cultural identity and promoting healing
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outcome A1 -->
+        <div id="outcomeA1" class="hidden">
+            <div class="outcome">
+                <h2>Cultural Anthropology</h2>
+                <p class="outcome-description">You're interested in understanding how people build communities and navigate cultural differences in their lives. You want to explore how different groups maintain their traditions in new and changing environments, how they form cross-cultural relationships, and what rituals help them feel connected to their culture and communities.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>Cultural researcher</li>
+                        <li>NGOs (community engagement, advocacy)</li>
+                        <li>Government departments (policy analysis, community development, cultural advisor)</li>
+                        <li>Museums and cultural institutions (curators, education, communications)</li>
+                        <li>Business (communications, user experience research)</li>
+                        <li>Teaching (primary, secondary, tertiary)</li>
+                        <li>Universities (research, grant writing)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 101 Foundations of Society and Culture</li>
+                        <li>ANTH 213 Ritual and Collective Life</li>
+                        <li>ANTH 312 Creative Ethnographic Practices</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome A2 -->
+        <div id="outcomeA2" class="hidden">
+            <div class="outcome">
+                <h2>Visual Anthropology</h2>
+                <p class="outcome-description">You want to explore how people tell stories about identity, belonging, and cultural values through visual media. You see visual expression as a powerful language that reveals how communities represent themselves and connect with others across cultural boundaries.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>Media (communications, content creation, journalism, documentary production)</li>
+                        <li>Creative industries (digital content creator, photographer, graphic novelist)</li>
+                        <li>Government departments (communications, policy analysis)</li>
+                        <li>Museums and cultural institutions (curators, education, communications)</li>
+                        <li>NGOs (advocacy, campaigns)</li>
+                        <li>Business (advertising, marketing strategy, user experience research)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 102 Social and Cultural Diversity</li>
+                        <li>ANTH 316 Visual Anthropology</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome B1 -->
+        <div id="outcomeB1" class="hidden">
+            <div class="outcome">
+                <h2>Science and Technology Studies (STS) Anthropology</h2>
+                <p class="outcome-description">You want to explore how different groups – scientists, communities, governments – develop different relationships with technology, and how scientific knowledge influences social life. You see science and technology not just as neutral tools, but as cultural forces that change how societies understand themselves, their environment, and their place in the world.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>Technology companies (research, product design, user experience, community engagement)</li>
+                        <li>Government departments (communications, policy analysis, research, technology assessment)</li>
+                        <li>Universities (research, grant writing, teaching)</li>
+                        <li>NGOs (policy analysis, advocacy)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 202 Capitalism, Culture and Inequality</li>
+                        <li>ANTH 210 Environmental Anthropology</li>
+                        <li>ANTH 301 Science, Technology and Culture</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome B2 -->
+        <div id="outcomeB2" class="hidden">
+            <div class="outcome">
+                <h2>Design Anthropology</h2>
+                <p class="outcome-description">You want to explore how people's cultural knowledge and lived experiences can inform the development of new approaches to real-world challenges. You see design as a way to bring together different perspectives and knowledge systems to create solutions that respect both cultural values and practical needs, fostering positive social change through design solutions.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>Research companies (design innovation, user experience, monitoring and evaluation)</li>
+                        <li>Business (communications, product design, user experience research, organisational development)</li>
+                        <li>NGOs (community engagement, advocacy, design innovation, education)</li>
+                        <li>Government departments (communications, community development, policy analysis and implementation)</li>
+                        <li>Museums and cultural institutions (education, community programmes)</li>
+                        <li>Universities (research, design innovation, community partnerships, teaching)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 210 Environmental Anthropology</li>
+                        <li>ANTH 216 Anthropology, Education and Social change</li>
+                        <li>ANTH 318 Design Anthropology</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome C1 -->
+        <div id="outcomeC1" class="hidden">
+            <div class="outcome">
+                <h2>Environmental Anthropology</h2>
+                <p class="outcome-description">You want to explore how environmental issues shape social life, food systems, community organising, and relationships between citizens and governments. You see urban environmental problems as social and cultural challenges that show how different groups understand health and their place in the city.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>NGOs (community engagement, advocacy, policy analysis)</li>
+                        <li>Government departments (communications, policy analysis, community development, research)</li>
+                        <li>Research companies (community engagement, project management, monitoring and evaluation)</li>
+                        <li>Universities (research, grant writing)</li>
+                        <li>Public health (communications, policy analysis, community health programmes)</li>
+                        <li>Business (sustainability consulting, organisational development)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 202 Capitalism, Culture and Inequality</li>
+                        <li>ANTH 210 Environmental Anthropology</li>
+                        <li>ANTH 314 Anthropology of Food and Eating</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome C2 -->
+        <div id="outcomeC2" class="hidden">
+            <div class="outcome">
+                <h2>Pacific Anthropology</h2>
+                <p class="outcome-description">You want to explore how Pacific communities navigate environmental challenges while maintaining cultural connections and community relationships. You see Oceanic experiences as offering unique cultural perspectives on sustainable city living and environmental management that can inform policy and practice in other regions.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>Government departments (policy analysis, international relations, community development)</li>
+                        <li>NGOs (advocacy, international development, community engagement)</li>
+                        <li>Museums and cultural institutions (curators, education, research)</li>
+                        <li>Universities (research, grant writing, international programmes)</li>
+                        <li>Research companies (cultural consulting, community engagement, monitoring and evaluation)</li>
+                        <li>Media (journalism, content creation, international reporting, documentary production)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 210 Environmental Anthropology</li>
+                        <li>ANTH 301 Science, Technology and Culture</li>
+                        <li>ANTH 308 Anthropology in Oceania</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome D1 -->
+        <div id="outcomeD1" class="hidden">
+            <div class="outcome">
+                <h2>Development Anthropology</h2>
+                <p class="outcome-description">You want to explore how development programmes are designed, implemented, and received by different communities, and why there are often gaps between programme goals and outcomes. You see international development work as a complex cultural encounter where good intentions can have unexpected consequences, and you want to help to make development interventions more effective and culturally appropriate.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>NGOs and humanitarian agencies (programme design, policy analysis, community development)</li>
+                        <li>Government departments (policy analysis, international development, research)</li>
+                        <li>Research companies (monitoring and evaluation, project management)</li>
+                        <li>Universities (research, grant writing, teaching)</li>
+                        <li>Business (corporate social responsibility, impact assessment)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 208 Human Rights, Humanitarianism and Development</li>
+                        <li>ANTH 209 Conflict and Reconciliation</li>
+                        <li>ANTH 317 Migration, Culture and Identity</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome D2 -->
+        <div id="outcomeD2" class="hidden">
+            <div class="outcome">
+                <h2>Activist Anthropology</h2>
+                <p class="outcome-description">You want to explore how communities develop their own education strategies and organise for social change. You see anthropology as a tool for supporting community-led initiatives and amplifying the voices of those who are often excluded from decision-making processes.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>NGOs (advocacy, communications, empowerment programmes, community development, educational materials)</li>
+                        <li>Government departments (community development, policy analysis)</li>
+                        <li>Media (social justice journalism, digital content creation, documentary production)</li>
+                        <li>Universities (participatory action research, community partnerships)</li>
+                        <li>Research companies (community engagement, social impact assessment, monitoring and evaluation)</li>
+                        <li>Advocacy organisations (human rights, social justice campaigns)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 201 Gender, Sexuality and Kinship</li>
+                        <li>ANTH 216 Anthropology, Education and Social Change</li>
+                        <li>ANTH 302 Anthropology for Liberation</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome E1 -->
+        <div id="outcomeE1" class="hidden">
+            <div class="outcome">
+                <h2>Medical Anthropology</h2>
+                <p class="outcome-description">You want to explore how family relationships and spiritual practices influence health decisions, and how medical professionals can work more effectively with diverse communities. You see health and medicine as deeply connected to cultural values, social relationships, and community support systems.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>Government departments (communications, policy analysis, health programmes, cultural advisory roles)</li>
+                        <li>Business (communications, training materials)</li>
+                        <li>NGOs (community engagement, advocacy)</li>
+                        <li>Media (journalism, content creation, documentary production)</li>
+                        <li>Research companies (cultural consulting, research, monitoring and evaluation)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 201 Gender, Sexuality and Kinship</li>
+                        <li>ANTH 307 Medical Anthropology</li>
+                        <li>ANTH 318 Design Anthropology</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+
+        <!-- Outcome E2 -->
+        <div id="outcomeE2" class="hidden">
+            <div class="outcome">
+                <h2>Food Anthropology</h2>
+                <p class="outcome-description">You want to explore how different communities use food for healing and how food practices connect culture, identity, health, and wellbeing. You see food as a powerful lens for understanding how people create meaning, build relationships, and maintain cultural traditions in changing environments.</p>
+                
+                <div class="career-section">
+                    <h3>Career Paths</h3>
+                    <ul>
+                        <li>Government departments (policy analysis, health sector, community health programmes)</li>
+                        <li>Business (food industry consulting, marketing research, cultural advisory roles)</li>
+                        <li>NGOs (food security, community engagement, advocacy)</li>
+                        <li>Museums and cultural institutions (curators, education, research)</li>
+                        <li>Research companies (food system analysis, community engagement)</li>
+                        <li>Media (journalism, content creation, documentary production)</li>
+                    </ul>
+                </div>
+
+                <div class="courses-section">
+                    <h3>Courses you might like</h3>
+                    <ul>
+                        <li>ANTH 210 Environmental Anthropology</li>
+                        <li>ANTH 308 Anthropology in Oceania</li>
+                        <li>ANTH 314 Anthropology of Food and Eating</li>
+                    </ul>
+                </div>
+
+                <button class="back-button" onclick="goBack()">Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showScenario(pathId) {
+            // Hide main screen
+            document.getElementById('main-screen').classList.add('hidden');
+            
+            // Show selected scenario
+            document.getElementById(pathId).classList.remove('hidden');
+        }
+
+        function showOutcome(outcomeId) {
+            // Hide all screens
+            const allScreens = document.querySelectorAll('.app-container > div');
+            allScreens.forEach(screen => screen.classList.add('hidden'));
+            
+            // Show selected outcome
+            document.getElementById(outcomeId).classList.remove('hidden');
+        }
+
+        function goBack() {
+            // Hide all screens
+            const allScreens = document.querySelectorAll('.app-container > div');
+            allScreens.forEach(screen => screen.classList.add('hidden'));
+            
+            // Show main screen
+            document.getElementById('main-screen').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
